@@ -114,6 +114,6 @@ public class CarparkAvailabilityImport {
      * @param args no arguments need to be specified
      */
     public static void main(final String[] args) {
-        SpringApplication.run(CarparkAvailabilityImport.class, args);
+        SpringApplication.run(CarparkAvailabilityImport.class, args).close();
     }
 }

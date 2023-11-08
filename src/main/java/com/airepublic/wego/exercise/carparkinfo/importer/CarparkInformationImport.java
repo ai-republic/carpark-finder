@@ -9,8 +9,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.stereotype.Service;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.core.annotation.Order;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.airepublic.wego.exercise.carparkinfo.service.CarparkInfoEntity;
 import com.airepublic.wego.exercise.carparkinfo.service.CarparkInfoRepository;
@@ -21,12 +25,11 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderHeaderAwareBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
-//@SpringBootApplication
-//@EnableJpaRepositories("com.airepublic.wego.exercise")
-//@EntityScan("com.airepublic.wego.exercise.*")
-//@Order(1)
-@Service
-public class CarparkInformationImport {
+@SpringBootApplication
+@EnableJpaRepositories("com.airepublic.wego.exercise")
+@EntityScan("com.airepublic.wego.exercise.*")
+@Order(1)
+public class CarparkInformationImport implements CommandLineRunner {
     private final static Logger LOG = LoggerFactory.getLogger(CarparkInformationImport.class);
     @Autowired
     private CarparkInfoRepository repository;
@@ -69,6 +72,7 @@ public class CarparkInformationImport {
     }
 
 
+    @Override
     public void run(final String... args) throws Exception {
         LOG.info("Starting CSV import of carpark information...");
         importCSV("HDBCarparkInformation.csv");
@@ -81,6 +85,6 @@ public class CarparkInformationImport {
      * @param args no arguments need to be specified
      */
     public static void main(final String[] args) {
-        SpringApplication.run(CarparkInformationImport.class, args);
+        SpringApplication.run(CarparkInformationImport.class, args).close();
     }
 }
