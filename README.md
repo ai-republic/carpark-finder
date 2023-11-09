@@ -18,5 +18,4 @@ Due to carpark information CSV not containing all carparks that are retrieved vi
 ## How to use
 1. Clone this Git repository and import the project to your favorite IDE
 2. Ensure Docker is running
-3. Run `CarparkInformationImport` CSV import
-4. Start `CarparkFinderApplication` and click on the above example link and feel free to modify the parameters
+3. Start `CarparkFinderApplication` and click on the above example link and feel free to modify the parameters
