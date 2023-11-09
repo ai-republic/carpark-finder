@@ -20,6 +20,7 @@
 
 	<properties>
 		<java.version>17</java.version>
+		<start-class>com.airepublic.wego.exercise.carparkinfo.CarparkFinderApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
