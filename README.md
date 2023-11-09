@@ -13,7 +13,7 @@ The application is running locally on port 8080.
 MySQL is running as docker image on port 3306, locally on port 3307.
 
 ### Handicaps
-Due to carpark information CSV not containing all carparks that are retrieved via the availability endpoint I had to add 7 dummy entries (Northpole) to the CSV.
+Due to carpark information CSV not containing all carparks that are retrieved via the availability endpoint I had to add 7 dummy entries (Northpole) to the CSV to make them match.
 
 ## How to use
 1. Clone this Git repository and import the project to your favorite IDE
